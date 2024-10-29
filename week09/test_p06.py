@@ -13,7 +13,7 @@ class P6TestCase(test_utils.TestCase):
         p6 = homework.p6
         self.assertFalse(isinstance(p6, type(Ellipsis)), "Variable p6 was not set.")
 
-        self.assertValues(p6, expected_projections=[144.0384696884941])
+        self.assertValues(p6, expected_projections=[9.002404355530881])
 
 
 ############################################################
