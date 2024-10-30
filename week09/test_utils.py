@@ -17,7 +17,7 @@ class TestCase(unittest.TestCase):
     def assertValues(self, a, *, expected_projections=None, expected_sum=None):
         a = np.asarray(a)
 
-        for v in a:
+        for v in np.nditer(a):
             self.assertIsNotNone(v)
             self.assertFalse(isinstance(v, str), msg="Found string value where numbers expected.")
                 
