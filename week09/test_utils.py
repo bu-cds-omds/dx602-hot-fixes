@@ -15,12 +15,12 @@ class TestCase(unittest.TestCase):
                 self.assertIn(column, df.columns)
 
     def assertValues(self, a, *, expected_projections=None, expected_sum=None):
+        a = np.asarray(a)
+
         for v in a:
             self.assertIsNotNone(v)
             self.assertFalse(isinstance(v, str), msg="Found string value where numbers expected.")
                 
-        a = np.asarray(a)
-
         if expected_sum is not None:
             self.assertAlmostEqual(np.sum(a), expected_sum, msg=f"Sum does not match expected sum {expected_sum}")
 
